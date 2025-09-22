@@ -43,9 +43,9 @@ class BalanceCart extends StatelessWidget {
                 Text(
                   "Rp 880.000",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color:  Colors. black,
+                    color: Colors.black,
                     ),
                   )
                 ],
@@ -53,7 +53,9 @@ class BalanceCart extends StatelessWidget {
             )
           ),
           Expanded(
+            flex: 3,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _actionButton(Icons.arrow_upward, "Pay"),
                 _actionButton(Icons.add_circle, "Top Up"),

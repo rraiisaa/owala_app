@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:tumblrr_app/data/products_data.dart';
+import 'package:tumblrr_app/models/products_model.dart';
 import 'package:tumblrr_app/utils/consts.dart';
 import 'package:tumblrr_app/views/auth/login_screen.dart';
 import 'package:tumblrr_app/views/auth/register_screen.dart';
+import 'package:tumblrr_app/views/details/detail_screen.dart';
 import 'package:tumblrr_app/views/home/catalogue_screen.dart';
 import 'package:tumblrr_app/views/onboarding_screen.dart';
 
@@ -36,8 +39,12 @@ class _OwalaAppState extends State<OwalaApp> {
       routes: {
         '/onboarding': (context) => OnboardingScreen(),
         '/login': (context) => LoginScreen(),
-        '/register': (context) =>RegisterScreen(),
+        '/register': (context) => RegisterScreen(),
         '/catalogue': (context) => CatalogueScreen(),
+        '/detail': (context) => DetailScreen(
+          // ModalRoute adalah class yang wajib di panggil ketika melakukan navigasi membawa data
+          product: ModalRoute.of(context)!.settings.arguments as ProductsModel,
+        ),
       },
     );
   }

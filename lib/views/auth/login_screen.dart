@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body:SingleChildScrollView(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 16, vertical: 32),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,11 +32,11 @@ class LoginScreen extends StatelessWidget {
             ),
             SizedBox(height: 8),
             Text(
-              "Please enter a form to login to this app",
-              style: TextStyle(
-                fontSize: 16,
-                color: textColor
-              ),
+             "Please enter a form to login to this app",
+             style: TextStyle(
+              fontSize: 16,
+              color: textColor
+             ), 
             ),
             SizedBox(height: 60),
             Form(
@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                   AuthFormField(
                     controller: _passwordController,
                     label: "Password",
-                    hintText: "Enter your Password",
+                    hintText: "Enter your password",
                     obscureText: true,
                     suffixIcon: Icon(Icons.visibility_off),
                     validator: Validators.validatePassword,
@@ -62,8 +62,8 @@ class LoginScreen extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed:() {},
-                      child: Text("Forgot Password?"),
+                      onPressed: () {},
+                      child: Text("Forgot Password"),
                     ),
                   ),
                   SizedBox(height: 20),
@@ -89,23 +89,24 @@ class LoginScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Text(
-                          "Or",
+                          "or",
                           style: TextStyle(
                             color: textColor
                           ),
                         ),
                       ),
-                      Expanded(child: Divider(
-                        thickness: 1,
-                        color: textColor,
-                       )
-                     )
-                   ],
+                      Expanded(
+                        child: Divider(
+                          thickness: 1,
+                          color: textColor,
+                        )
+                      )
+                    ],
                   ),
                   SizedBox(height: 20),
                   SocialAuthButton(
                     assetIcon: "assets/icons/google_logo.svg",
-                    label: "Sign In with Google",
+                    label: "Sign in with Google",
                     backgroundColor: Colors.white,
                     foregroundColor: Colors.black,
                     onPressed: () {},
@@ -113,7 +114,7 @@ class LoginScreen extends StatelessWidget {
                   SizedBox(height: 20),
                   SocialAuthButton(
                     assetIcon: "assets/icons/apple_logo.svg",
-                    label: "Sign In with Apple",
+                    label: "Sign in with Apple",
                     backgroundColor: Colors.black,
                     foregroundColor: Colors.white,
                     onPressed: () {},
@@ -122,21 +123,22 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't have an account?",
-                      style: TextStyle(
-                        color: textColor
-                       ),
+                      Text(
+                        "Don't have an account?",
+                        style: TextStyle(
+                          color: textColor
+                        ),
                       ),
                       TextButton(
                         onPressed: () => Navigator.pushNamed(context, '/register'),
                         child: Text("Register"),
-                      ),
+                      )
                     ],
                   )
                 ],
               ),
             )
-          ],
+,          ],
         )
       ),
     );

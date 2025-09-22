@@ -6,10 +6,10 @@ import 'package:tumblrr_app/views/auth/components/auth_form_field.dart';
 
 class RegisterScreen extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
-  final _nameController = TextEditingController();
-  final _emailController = TextEditingController();
-  final _passwordController = TextEditingController();
-  final _confirmPasswordController = TextEditingController();
+  final _nameController = TextEditingController(); 
+  final _emailController = TextEditingController(); 
+  final _passwordController = TextEditingController(); 
+  final _confirmPasswordController = TextEditingController(); 
 
   RegisterScreen({super.key});
 
@@ -27,7 +27,7 @@ class RegisterScreen extends StatelessWidget {
               style: TextStyle(
                 color: textColor,
                 fontSize: 32,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.bold
               ),
             ),
             SizedBox(height: 8),
@@ -35,7 +35,7 @@ class RegisterScreen extends StatelessWidget {
               "Please create an account to continue",
               style: TextStyle(
                 fontSize: 16,
-                color: textColor,
+                color: textColor
               ),
             ),
             SizedBox(height: 30),
@@ -62,19 +62,19 @@ class RegisterScreen extends StatelessWidget {
                   AuthFormField(
                     controller: _passwordController,
                     label: "Password",
-                    hintText: "Enter your Password",
+                    hintText: "Enter your password",
                     obscureText: true,
                     suffixIcon: Icon(Icons.visibility),
                     validator: Validators.validatePassword,
                   ),
-                   SizedBox(height: 20),
-                   AuthFormField(
+                  SizedBox(height: 20),
+                  AuthFormField(
                     controller: _confirmPasswordController,
                     label: "Confirm Password",
                     hintText: "Confirm your password",
                     obscureText: true,
                     suffixIcon: Icon(Icons.visibility),
-                    validator: (value) =>  Validators.validateConfirmPassword(
+                    validator: (value) => Validators.validateConfirmPassword(
                       value,
                       _passwordController.text
                     ),
@@ -100,18 +100,17 @@ class RegisterScreen extends StatelessWidget {
                           color: textColor
                         ),
                       ),
-
                       TextButton(
                         onPressed: () => Navigator.pushNamed(context, '/login'),
                         child: Text("Sign In"),
-                      ),
+                      )
                     ],
                   )
                 ],
-              )
+              ),
             )
           ],
-        ),
+        )
       ),
     );
   }

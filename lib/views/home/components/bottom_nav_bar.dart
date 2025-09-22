@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tumblrr_app/utils/consts.dart';
 
-class ButtonNavBar extends StatelessWidget {
+class BottomNavBar extends StatelessWidget {
   final int selectedIndex;
   final ValueChanged<int>onItemTapped;
 
-  const ButtonNavBar({super.key, required this.selectedIndex, required this.onItemTapped});
+  const BottomNavBar({super.key, required this.selectedIndex, required this.onItemTapped});
 
   @override
   Widget build(BuildContext context) {
